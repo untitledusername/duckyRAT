@@ -7,7 +7,7 @@ While 1
 WEnd
 Func loop()
    $oHTTP = ObjCreate("winhttp.winhttprequest.5.1")
-   $oHTTP.Open("GET", "<<<INSERT LINK TO WEBPAGE>>>", False)
+   $oHTTP.Open("GET", "INSERT LINK TO WEBPAGE", False)
 
    $oHTTP.Send()
    $oReceived = $oHTTP.ResponseText
